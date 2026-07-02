@@ -7,12 +7,12 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: reboto;
+    font-family: 'roboto', sans-serif;
 }
 
 :root{
-    --cor_principal: #eec71b;
-    --cor_botao01: #4dd616; 
+    --cor_principal: #082aeb;
+    --cor_botao01: #ffffff; 
     --cor_vermelha: rgb(214, 22, 22);
     --cor_link_menu: rgb(252, 252, 252);
 }
@@ -28,24 +28,28 @@
 
 #cabecalho{
     width: 100%;
-    height: 200px;
+    height: 90px;
     background-color: var(--cor_principal);
-    padding: 5px;
-    margin: 20px 0px;
+    padding: 0 30px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    border-radius: 5px;
 }
 
-#logo_ing{
-    width: 750px;
-    height: 160px;
+img{
+    border-radius: 50px;
+}
+#logo img{
+    width: 200px;
+    height: auto;
+    display: block;
+    border-radius: 600px;
 }
 
 #menu{
-    background-color: antiquewhite;
-    width: 600px;
-    height: 160px;
+    width: 350px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,19 +58,21 @@
 #cabecalho ul{
     display: flex;
     list-style: none;
+    text-align: center;
     gap: 20px;
 }
 
 #div-icones img{
     width: 70px;
     height: 60px;
+    border-radius: 5px;
 }
 
 #menu a:link{
-    font-size: 1.3em;
+    font-size: 1.2em;
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--cor_link_menu);
+   color: rgb(219, 243, 2);
 }
 
 #menu a:visited{
@@ -76,14 +82,14 @@
     color: var(--cor_link_menu);
 }
 
-menu a:hover{
+#menu a:hover{
     font-size: 1.6em;
     text-transform: uppercase;
     text-decoration: none;
     color: var(--cor_botao01);
 }
 
-menu a:active{
+#menu a:active{
     font-size: 1.3em;
     text-transform: uppercase;
     text-decoration: none;
@@ -99,14 +105,24 @@ menu a:active{
 }
 
 #pesquisa input{
-    width: 6%;
-    height: 80px;
-    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    height: 50px;
+    padding: 15px;
     border-radius: 8px;
-    font-size: 2em;
+    font-size: 1.1em;
 }
 
+#icone_sociais img{
+    width: 80px;
+    padding: 10px;
+    align-items: center;
+    height: 60px;
+}
 
+ul{
+    list-style: none;
+}
 
 
 
