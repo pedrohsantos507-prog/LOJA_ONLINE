@@ -68,15 +68,18 @@ body{
 }
 
 #menu a{
+    font-size: 1.2em;
+    text-transform: uppercase;
     text-decoration: none;
     color: white;
-    font-size: 1.1em;
     font-weight: bold;
-    transition: .3s;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 #menu a:hover{
     color: var(--cor_suave);
+    transform: scale(1.15);
 }
 
 #div-icones img{
