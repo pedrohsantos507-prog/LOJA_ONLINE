@@ -1,36 +1,43 @@
 import { produtos } from "./produtos.js";
+import { secoes } from "./secoes.js";
 
 // PEGANDO ELEMENTOS DO DOM
-const section_card = document.querySelector('#cards');
+const section_card = document.querySelector("#cards");
+const ulCategorias = document.querySelector("#categorias");
 
-// FUNÇÃO PARA CARREGAR OS PRODUTOS
-const listarProdutos = () => {
-    section_card.innerHTML = '';
+// ==========================
+// LISTAR PRODUTOS
+// ==========================
 
-    produtos.forEach((elem) => {
-        const divCard = document.createElement('div');
-        divCard.setAttribute('class', 'card');
+const listarProdutos = (listaProdutos) => {
+
+    section_card.innerHTML = "";
+
+    listaProdutos.forEach((elem) => {
+
+        const divCard = document.createElement("div");
+        divCard.classList.add("card");
 
         // Imagem
-        const imgProduto = document.createElement('img');
-        imgProduto.setAttribute('src', elem.caminho_imagem);
-        imgProduto.setAttribute('class', 'img_card');
+        const imgProduto = document.createElement("img");
+        imgProduto.src = elem.caminho_imagem;
+        imgProduto.alt = elem.descricao_produto;
+        imgProduto.classList.add("img_card");
 
         // Título
-        const h2Titulo = document.createElement('h3');
+        const h2Titulo = document.createElement("h2");
         h2Titulo.innerHTML = elem.descricao_produto;
 
         // Valor
-        const h3Valor = document.createElement('h3');
-        h3Valor.setAttribute('class', 'valor_card');
-        h3Valor.innerHTML = `R$ ${parseFloat(elem.valor_unitario)
-            .toFixed(2)
-            .replace('.', ',')}`;
+        const h3Valor = document.createElement("h3");
+        h3Valor.classList.add("valor_card");
+        h3Valor.innerHTML =
+            `R$ ${elem.valor_unitario.toFixed(2).replace(".", ",")}`;
 
         // Botão
-        const btnCard = document.createElement('button');
-        btnCard.setAttribute('class', 'btn_card');
-        btnCard.innerHTML = 'Adicionar';
+        const btnCard = document.createElement("button");
+        btnCard.classList.add("btn_card");
+        btnCard.innerHTML = "Adicionar";
 
         divCard.appendChild(imgProduto);
         divCard.appendChild(h2Titulo);
@@ -38,92 +45,85 @@ const listarProdutos = () => {
         divCard.appendChild(btnCard);
 
         section_card.appendChild(divCard);
+
     });
+
 };
 
-listarProdutos();
+// ==========================
+// FILTRAR PRODUTOS
+// ==========================
 
-//FILTRANDO AS SEÇÕES COM A COLEÇÃO map
-const listarSecoes = () => {
-    //CRIANDO A COLEÇÃO MAP
-    const secoesFiltrada = new Map()
-    //PERCORRENDO O ARRAY PRODUTOS E FILTRANDO AS SEÇÕES
-    produtos.forEach((elem, i) => {
-        secoesFiltrada.set(elem.id_secao, elem)
-    })
-    //CONVERTENDO O MAP EM ARRAY
-    const secoesMenu = Array.from(secoesFiltrada.value())
-    //RETORNANDO O ARRAY CONVERTIDO
-    return secoesMenu
-}
+const produtosFiltrados = (idSecao) => {
 
-//MONTANDO OS LINKS SEÇÕES 
+    return produtos.filter((produto) => produto.id_secao === idSecao);
+
+};
+
+// ==========================
+// MONTAR MENU DE CATEGORIAS
+// ==========================
+
 const montarSecoes = () => {
-        //PEGANDO ELEMENTOS DO DOM
-    const ulMenu = document.querySelector('#menu-secoes')
-    //LIMPANDO O ELEMENTO ulMenu
-    ulMenu.innerHTML = ''
-    //PERCORENDO O ARRAY DAS SEÇÕES FILTRADA
-listarSecoes().forEach((elem, i) => {
-    //CRIANDO O ELEMENTO li
-    const liSecao = document.createElement('li')
-    //CRIANDO O ELEMENTO a
-    const aSecao = document.createElement('a')
-    aSecao.setAttribute('href', '#')
-    aSecao.setAttribute('class', 'link-secao')
-    aSecao.innerHTML = elem.nome_secao
-    //CAPTURANDO O CLICK DOS LINKS
-    aSecao.addEventListener('click', ()=>{
-        //  PARA TESTE
-            console.log(elem.id_secao)
-            //CHAMANDO A FUNÇÃO PRODUTOS FILTRADOS
-            produtosFiltrados(elem.id_secao)
-    })
-    //ADICIONANDO O ELEMENTO FILHO a NO ELEMENTO li
-    liSecao.appendChild(aSecao)
 
-    //ADICIONANDO O ELEMENTO FILHO li NO ELEMENTO DO DOM ul
-    ulMenu.appendChild(liSecao)
-})
+    ulCategorias.innerHTML = "";
 
-}
+    // Botão Todos
 
-montarSecoes()
+    const liTodos = document.createElement("li");
 
-//FILTRANDO PRODUTOS
-const produtosFiltrados = (idSecao)=>{
-    return produtos.filter(elem => elem.id_secao === idSecao)
-}
+    const aTodos = document.createElement("a");
 
-//MONTANDO CARDS
-const montandoCards = (objProdutos) => {
-    section_card.innerHTML = ''
+    aTodos.href = "#";
+    aTodos.innerHTML = "Todos";
+    aTodos.classList.add("link_menu");
 
-    objProdutos.forEach((elem, i) => {
-        const divCard = document.createElement('div')
-        divCard.setAttribute('class', 'card')
+    aTodos.addEventListener("click", (evento) => {
 
-        const imgProduto = document.createElement('img')
-        imgProduto.setAttribute('src', elem.caminho_imagem)
-        imgProduto.setAttribute('alt', elem.descricao_produto)
-        imgProduto.setAttribute('class', 'img_card')
+        evento.preventDefault();
 
-        const h2Titulo = document.createElement('h2')
-        h2Titulo.innerHTML = elem.descricao_produto
+        listarProdutos(produtos);
 
-        const h3Valor = document.createElement('h3')
-        h3Valor.setAttribute('class', 'valor_card')
-        h3Valor.innerHTML = `R$ ${parseFloat(elem.valor_unitario).toFixed(2).replace('.',',')}`
+    });
 
-        const btnCard = document.createElement('button')
-        btnCard.setAttribute('class', 'btn_card')
-        btnCard.innerHTML = 'adicionar'
+    liTodos.appendChild(aTodos);
 
-        divCard.appendChild(imgProduto)
-        divCard.appendChild(h2Titulo)
-        divCard.appendChild(h3Valor)
-        divCard.appendChild(btnCard)
+    ulCategorias.appendChild(liTodos);
 
-        section_card.appendChild(divCard)
-    })
-}
+    // Demais categorias
+
+    secoes.forEach((secao) => {
+
+        const li = document.createElement("li");
+
+        const a = document.createElement("a");
+
+        a.href = "#";
+        a.innerHTML = secao.nome_secao;
+        a.classList.add("link_menu");
+
+        a.addEventListener("click", (evento) => {
+
+            evento.preventDefault();
+
+            const lista = produtosFiltrados(secao.id_secao);
+
+            listarProdutos(lista);
+
+        });
+
+        li.appendChild(a);
+
+        ulCategorias.appendChild(li);
+
+    });
+
+};
+
+// ==========================
+// INICIALIZAÇÃO
+// ==========================
+
+listarProdutos(produtos);
+
+montarSecoes();
