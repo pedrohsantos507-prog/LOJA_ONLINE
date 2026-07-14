@@ -1,6 +1,7 @@
 
 //VERIFICANDO SE JA EXISTE UM CARRINHO SALVO
 let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+console.log(carrinho);
 //CRIANDO A PRIMEIRA FUNÇÃO
 const adicionarAoCarrinho = (produto) =>
 {
