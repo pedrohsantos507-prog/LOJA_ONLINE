@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>carrinho</title>
+
+    <link rel="stylesheet" href="CSS/style_estrutura_pagina.css"/>
+    <link
+      rel="stylesheet"
+      href="CSS/style_carrinho.css"
+    />
+    <script type="module" src="JS/pagina_carrinho.js" defer></script>
+
+    
+
+  </head>
+  <body>
+    <header id="cabecalho">
+      <div id="logo">
+        <a href="index.html">
+          <img src="imagens/icones/logo_loja.png.png" alt="Logo da Loja" />
+        </a>
+      </div>
+
+      <nav id="menu">
+        <ul id="menu-secoes">
+          <li><a href="index.html" class="link_menu">Home</a></li>
+          <li><a href="cadastro.html" class="link_menu">Cadastro</a></li>
+          <li><a href="sobre.html" class="link_menu">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <div id="div-icones">
+        <ul>
+          <li>
+            <a href="paginas/login.html">
+              <img src="imagens/icones/download (3).png" alt="Login" />
+            </a>
+          </li>
+
+          <li>
+            <a href="carrinho.html">
+              <img src="imagens/icones/download (2).png" alt="Carrinho" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <h1>Meu carrinho</h1>
+
+      <section id="lista-carrinho"></section>
+
+      <section id="resumo-compra">
+        <h2>Total:</h2>
+
+        <h3 id="valor-total">R$ 0,00</h3>
+
+        <button id="btn-finalizar">Finalizar compra</button>
+      </section>
+    </main>
+  </body>
+</html>

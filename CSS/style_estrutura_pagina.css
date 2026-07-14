@@ -269,3 +269,37 @@ body{
     color: black;
     transform: translateY(-3px);
 }
+/* ==========================
+   ÍCONE DO CARRINHO
+========================== */
+
+.icone-carrinho{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contador-carrinho{
+    position: absolute;
+
+    top: -8px;
+    right: -8px;
+
+    min-width: 20px;
+    height: 20px;
+
+    padding: 0 5px;
+
+    border-radius: 50px;
+
+    background: #ff3b30;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 12px;
+    font-weight: bold;
+}

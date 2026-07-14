@@ -191,3 +191,55 @@ main h1{
         width:100%;
     }
 }
+
+/* ==========================
+   CONTROLES DO CARRINHO
+========================== */
+
+.controles{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:15px;
+}
+
+/* Botões + e - */
+
+.btn-mais,
+.btn-menos{
+    width:38px;
+    height:38px;
+    border:none;
+    border-radius:50%;
+    background:#009688;
+    color:white;
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-mais:hover,
+.btn-menos:hover{
+    background:#00796b;
+    transform:scale(1.08);
+}
+
+/* Botão remover */
+
+.btn-remover{
+    border:none;
+    background:#dc3545;
+    color:white;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-remover:hover{
+    background:#b02a37;
+    transform:scale(1.05);
+}
