@@ -1,5 +1,6 @@
 import { produtos } from "./produtos.js";
 import { secoes } from "./secoes.js";
+import { adicionarAoCarrinho } from "./carrinho.js";
 
 // PEGANDO ELEMENTOS DO DOM
 const section_card = document.querySelector("#cards");
@@ -38,6 +39,12 @@ const listarProdutos = (listaProdutos) => {
         const btnCard = document.createElement("button");
         btnCard.classList.add("btn_card");
         btnCard.innerHTML = "Adicionar";
+
+        btnCard.addEventListener("click", () => {
+
+            adicionarAoCarrinho(elem);
+        
+        });
 
         divCard.appendChild(imgProduto);
         divCard.appendChild(h2Titulo);
