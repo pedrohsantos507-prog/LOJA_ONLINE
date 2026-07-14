@@ -1,123 +1,150 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loja de Computadores</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loja de Computadores</title>
+    <link rel="stylesheet" href="CSS/style_estrutura_pagina.css" />
 
-  <link rel="stylesheet" href="CSS/style_estrutura_pagina.css">
+    <script type="module" src="JS/carrega_produtos.js" defer></script>
 
-  <script type="module" src="JS/carrega_produtos.js" defer></script>
+    <link
+      rel="icon"
+      href="imagens/icones/logo_loja.png.png"
+      type="image/x-icon"
+    />
+  </head>
 
-  <link rel="icon" href="imagens/icones/logo_loja.png.png" type="image/x-icon">
-</head>
+  <body>
+    <main id="geral">
+      <!-- =========================
+         CABEÇALHO
+    ========================== -->
 
-<body>
-
-  <main id="geral">
-
-    <header id="cabecalho">
-
-      <div id="logo">
-        <a href="index.html">
-          <img src="imagens/icones/logo_loja.png.png" alt="Logo da Loja">
-        </a>
-      </div>
-
-      <nav id="menu">
-        <ul id="menu-secoes">
-          <li><a href="index.html" class="link_menu">Home</a></li>
-          <li><a href="cadastro.html" class="link_menu">Cadastro</a></li>
-          <li><a href="sobre.html" class="link_menu">Sobre</a></li>
-        </ul>
-      </nav>
-
-      <div id="div-icones">
-        <ul>
-          <li>
-            <a href="login.html">
-              <img src="imagens/icones/download (3).png" alt="Login">
-            </a>
-          </li>
-
-          <li>
-            <a href="carrinho.html" class="icone-carrinho"> 
-              <img src="imagens/icones/download (2).png" alt="Carrinho">
-              <span id="contador-carrinho">0</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-    </header>
-
-    <!-- MENU DAS CATEGORIAS -->
-    <section id="categorias-produtos">
-      <ul id="categorias">
-        <!-- Criado pelo JavaScript -->
-      </ul>
-    </section>
-
-    <!-- BARRA DE PESQUISA -->
-    <section id="barra-pesquisa">
-
-      <input type="text" id="pesquisa" placeholder="Pesquisar produtos...">
-
-    </section>
-
-    <!-- PRODUTOS -->
-    <section id="cards">
-
-      <!-- Os cards serão criados pelo JavaScript -->
-
-    </section>
-
-    <!-- RODAPÉ -->
-    <footer id="rodape">
-
-      <div id="dadosloja">
-
-        <h2>Rua da Creusa, 6767 - Bairro Lagartixa</h2>
-
-        <h3>Aracaju - Sergipe</h3>
-
-      </div>
-
-      <div id="icone_sociais">
-
-        <ul>
-
-          <li>
-            <a href="#">
-              <img src="imagens/icones/instagram_logo.png" alt="Instagram">
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              <img src="imagens/icones/facebook_logo.png" alt="Facebook">
-            </a>
-          </li>
-
-        </ul>
-
-        <div id="cartoes">
-
-          <img src="imagens/icones/download.png" alt="Hipercard">
-
-          <img src="imagens/icones/download.jpg" alt="Mastercard">
-
-          <img src="imagens/icones/download (1).png" alt="Visa">
-
+      <header id="cabecalho">
+        <div id="logo">
+          <a href="index.html">
+            <img src="imagens/icones/logo_loja.png.png" alt="Logo da Loja" />
+          </a>
         </div>
 
-      </div>
+        <nav id="menu">
+          <ul id="menu-secoes">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+          </ul>
+        </nav>
 
-    </footer>
+        <div id="div-icones">
+          <ul>
+            <li>
+              <a href="login.html">
+                <img src="imagens/icones/download (3).png" alt="Login" />
+              </a>
+            </li>
 
-  </main>
+            <li>
+              <a href="carrinho.html" class="icone-carrinho">
+                <img src="imagens/icones/download (2).png" alt="Carrinho" />
 
-</body>
+                <span id="contador-carrinho">0</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </header>
 
+      <!-- =========================
+         MENU DAS CATEGORIAS
+    ========================== -->
+
+      <section id="categorias-produtos">
+        <ul id="categorias">
+          <!-- Criado pelo JavaScript -->
+        </ul>
+      </section>
+
+      <!-- =========================
+         BARRA DE PESQUISA
+    ========================== -->
+
+      <section id="barra-pesquisa">
+        <input type="text" id="pesquisa" placeholder="Pesquisar produtos..." />
+      </section>
+
+      <!-- =========================
+         PRODUTOS
+    ========================== -->
+
+      <section id="cards">
+        <!-- Os cards são criados pelo JavaScript -->
+      </section>
+
+      <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+      <footer id="rodape">
+        <!-- Informações da loja -->
+
+        <div id="dadosloja">
+          <h1>TECH STORE</h1>
+
+          <h2>📍 Endereço</h2>
+
+          <p>Rua da Creusa, 6767</p>
+          <p>Bairro Lagartixa</p>
+          <p>Aracaju - Sergipe</p>
+
+          <br />
+
+          <h2>📞 Contato</h2>
+
+          <p>(79) 99999-9999</p>
+
+          <p>contato@techstore.com.br</p>
+        </div>
+
+        <!-- Redes sociais e pagamentos -->
+
+        <div id="icone_sociais">
+          <h2>Redes Sociais</h2>
+
+          <ul>
+            <li>
+              <a href="#">
+                <img src="imagens/icones/instagram_logo.png" alt="Instagram" />
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <img src="imagens/icones/facebook_logo.png" alt="Facebook" />
+              </a>
+            </li>
+          </ul>
+
+          <h2>Formas de Pagamento</h2>
+
+          <div id="cartoes">
+            <img src="imagens/icones/download.jpg" alt="MasterCard" />
+
+            <img src="imagens/icones/download (1).png" alt="Visa" />
+
+            <img src="imagens/icones/download.png" alt="Hipercard" />
+          </div>
+        </div>
+      </footer>
+
+      <!-- =========================
+         COPYRIGHT
+    ========================== -->
+
+      <footer id="copyright">
+        <p>© 2026 Tech Store - Todos os direitos reservados.</p>
+      </footer>
+    </main>
+  </body>
 </html>
