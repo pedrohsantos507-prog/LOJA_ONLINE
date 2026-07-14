@@ -4,6 +4,7 @@ let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 //CRIANDO A PRIMEIRA FUNÇÃO
 const adicionarAoCarrinho = (produto) =>
 {
+    console.log("produto recebido:", produto)
     const indice = carrinho.findIndex((item) => {
         return item.id_produto === produto.id_produto;
     });
@@ -16,6 +17,8 @@ const adicionarAoCarrinho = (produto) =>
     carrinho[indice].quantidade++;
   }
   localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+  console.log("carrinho", carrinho)
   
 };
 
