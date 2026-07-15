@@ -58,3 +58,22 @@ label{
 .oculto{
     display: none;
 }
+#grupo-sexo{
+    display: flex;
+    gap: 30px;
+    margin: 10px 0 20px 0;
+}
+
+#grupo-sexo label{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: none;
+    cursor: pointer;
+}
+
+#grupo-sexo input[type="radio"]{
+    width: auto;
+}

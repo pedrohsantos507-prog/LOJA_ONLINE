@@ -17,7 +17,7 @@ const secoes = [
     },
     {
         id_secao: 5,
-        nome_secao: "computadore antigos"
+        nome_secao: "computadores antigos"
     }
 ]
 

@@ -19,7 +19,7 @@ const atualizarContador = () => {
 // LISTAR PRODUTOS
 // ==========================
 
-const listarProdutos = (listaProdutos) => {
+export const listarProdutos = (listaProdutos) => {
   section_card.innerHTML = "";
 
   listaProdutos.forEach((elem) => {
@@ -130,3 +130,21 @@ listarProdutos(produtos);
 montarSecoes();
 
 atualizarContador();
+
+// =======================
+// PESQUISA DE PRODUTOS
+// =======================
+
+const pesquisa = document.querySelector("#pesquisa");
+
+if (pesquisa) {
+  pesquisa.addEventListener("input", () => {
+    const texto = pesquisa.value.toLowerCase().trim();
+
+    const listaFiltrada = produtos.filter((produto) =>
+      produto.descricao_produto.toLowerCase().includes(texto)
+    );
+
+    listarProdutos(listaFiltrada);
+  });
+}
