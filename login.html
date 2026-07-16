@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link rel="stylesheet" href="CSS/style_estrutura_pagina.css" />
+    <link rel="stylesheet" href="CSS/style_formulario.css" />
+
+    <script type="module" src="JS/login.js" defer></script>
+  </head>
+  <body>
+    <main id="geral">
+      <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+      <header id="cabecalho">
+        <div id="logo">
+          <a href="index.html">
+            <img src="imagens/icones/logo_loja.png.png" alt="Logo da Loja" />
+          </a>
+        </div>
+      </header>
+      <section id="form">
+        <h3>Login</h3>
+        <form id="form-login">
+          <label for="email">E-mail</label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="input01"
+            placeholder="digite seu email"
+            required
+          />
+          <label for="senha">Senha</label>
+
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            class="input01"
+            placeholder="digite sua senha"
+            required
+          />
+          <div id="div-btns">
+            <button type="submit" id="btn-login">Entrar</button>
+          </div>
+          <p id="texto-cadastrado">
+            Ainda nao possui cadastro?
+
+            <a href="cadastro.html"> Cadastre-se </a>
+            <a href="index.html">Voltar a página inícial</a>
+          </p>
+        </form>
+      </section>
+      <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+      <footer id="rodape">
+        <!-- Informações da loja -->
+
+        <div id="dadosloja">
+          <h1>TECH STORE</h1>
+
+          <h2>📍 Endereço</h2>
+
+          <p>Rua da Creusa, 6767</p>
+          <p>Bairro Lagartixa</p>
+          <p>Aracaju - Sergipe</p>
+
+          <br />
+
+          <h2>📞 Contato</h2>
+
+          <p>(79) 99999-9999</p>
+
+          <p>contato@techstore.com.br</p>
+        </div>
+
+        <!-- Redes sociais e pagamentos -->
+
+        <div id="icone_sociais">
+          <h2>Redes Sociais</h2>
+
+          <ul>
+            <li>
+              <a href="#">
+                <img src="imagens/icones/instagram_logo.png" alt="Instagram" />
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <img src="imagens/icones/facebook_logo.png" alt="Facebook" />
+              </a>
+            </li>
+          </ul>
+
+          <h2>Formas de Pagamento</h2>
+
+          <div id="cartoes">
+            <img src="imagens/icones/download.jpg" alt="MasterCard" />
+
+            <img src="imagens/icones/download (1).png" alt="Visa" />
+
+            <img src="imagens/icones/download.png" alt="Hipercard" />
+          </div>
+        </div>
+      </footer>
+
+      <!-- =========================
+         COPYRIGHT
+    ========================== -->
+
+      <footer id="copyright">
+        <p>© 2026 Tech Store - Todos os direitos reservados.</p>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+#body{
+    background-color: #0f172a;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#sobre{
+    width: 80%;
+    margin: 40px auto;
+    color: black;
+}
+
+#sobre h1{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 38px;
+}
+
+#sobre p{
+    text-align: justify;
+    line-height: 28px;
+    font-size: 18px;
+}
+
+.card-sobre{
+    margin-top: 35px;
+    padding: 25px;
+    border-radius: 12px;
+    background-color: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.card-sobre h2{
+    margin-bottom: 15px;
+    color: #4ea8ff;
+}
+
+.card-sobre ul{
+    margin-left: 25px;
+}
+
+.card-sobre li{
+    margin-bottom: 10px;
+}
+
+#destaque{
+    margin-top: 40px;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    background: linear-gradient(90deg,#0b6efd,#1e90ff);
+}
+
+#destaque h2{
+    margin-bottom: 15px;
+}
+
+#destaque p{
+    text-align: center;
+}

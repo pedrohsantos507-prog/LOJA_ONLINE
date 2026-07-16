@@ -1,37 +1,93 @@
+// ==========================================
+// SELEÇÃO DOS ELEMENTOS DA PÁGINA
+// ==========================================
+
+// Seleciona o formulário de cadastro pelo id
 const formulario = document.querySelector("#form-pessoa");
-console.log("cadastro.js carregado");
+
+// ==========================================
+// EVENTO DE ENVIO DO FORMULÁRIO
+// ==========================================
+
+// Executa esta função quando o usuário clicar em "Cadastrar"
 formulario.addEventListener("submit", (evt) => {
-    evt.preventDefault();
 
-    const dadosFormulario = new FormData(formulario);
+  // Impede que a página seja recarregada ao enviar o formulário
+  evt.preventDefault();
 
-    const usuario = {
+  // Captura todos os dados preenchidos no formulário
+  const dadosFormulario = new FormData(formulario);
 
-        nome: dadosFormulario.get("nome"),
+  // ==========================================
+  // CRIAÇÃO DO OBJETO USUÁRIO
+  // ==========================================
 
-        cpf: dadosFormulario.get("cpf"),
+  // Cria um objeto contendo todas as informações do usuário
+  const usuario = {
+    nome: dadosFormulario.get("nome"),
 
-        dataNascimento: dadosFormulario.get("data-nascimento"),
+    cpf: dadosFormulario.get("cpf"),
 
-        sexo: dadosFormulario.get("sexo"),
+    dataNascimento: dadosFormulario.get("data-nascimento"),
 
-        cep: dadosFormulario.get("cep"),
+    sexo: dadosFormulario.get("sexo"),
 
-        logradouro: dadosFormulario.get("logradouro"),
+    cep: dadosFormulario.get("cep"),
 
-        numero: dadosFormulario.get("numero"),
+    logradouro: dadosFormulario.get("logradouro"),
 
-        complemento: dadosFormulario.get("complemento"),
+    numero: dadosFormulario.get("numero"),
 
-        bairro: dadosFormulario.get("bairro"),
+    complemento: dadosFormulario.get("complemento"),
 
-        localidade: dadosFormulario.get("localidade"),
+    bairro: dadosFormulario.get("bairro"),
 
-        uf: dadosFormulario.get("uf"),
+    localidade: dadosFormulario.get("localidade"),
 
-        email: dadosFormulario.get("email"),
+    uf: dadosFormulario.get("uf"),
 
-        senha: dadosFormulario.get("senha")
+    email: dadosFormulario.get("email"),
 
-    };
+    senha: dadosFormulario.get("senha"),
+  };
+
+  // ==========================================
+  // RECUPERAÇÃO DOS USUÁRIOS CADASTRADOS
+  // ==========================================
+
+  // Recupera o vetor de usuários salvo no localStorage.
+  // Caso ainda não exista nenhum cadastro, cria um vetor vazio.
+  let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+  // ==========================================
+  // VERIFICA SE O USUÁRIO JÁ ESTÁ CADASTRADO
+  // ==========================================
+
+  // Procura um usuário que possua o mesmo e-mail ou CPF.
+  let usuarioExistente = usuarios.find((u) => {
+    return u.email === usuario.email || u.cpf === usuario.cpf;
+  });
+
+  // Se encontrar um usuário com o mesmo e-mail ou CPF,
+  // interrompe o cadastro.
+  if (usuarioExistente) {
+    alert("Usuário já cadastrado!");
+    return;
+  }
+
+  // ==========================================
+  // CADASTRO DO NOVO USUÁRIO
+  // ==========================================
+
+  // Adiciona o novo usuário ao vetor.
+  usuarios.push(usuario);
+
+  // Salva o vetor atualizado no localStorage.
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+  // Informa que o cadastro foi realizado com sucesso.
+  alert("Cadastro realizado com sucesso!");
+
+  // Limpa todos os campos do formulário.
+  formulario.reset();
 });
