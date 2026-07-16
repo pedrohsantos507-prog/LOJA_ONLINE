@@ -90,4 +90,6 @@ formulario.addEventListener("submit", (evt) => {
 
   // Limpa todos os campos do formulário.
   formulario.reset();
+
+  window.location.href = "index.html";
 });
