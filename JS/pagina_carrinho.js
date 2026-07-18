@@ -5,6 +5,8 @@ import {
   removerProduto,
 } from "./carrinho.js";
 
+//CAPTURANDO ELEMENTOS DO DOM 
+
 const listaCarrinho = document.querySelector("#lista-carrinho");
 const valorTotal = document.querySelector("#valor-total");
 
